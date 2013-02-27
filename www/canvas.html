@@ -1,0 +1,44 @@
+<html>
+<head><title>canvas</title></head>
+<body>
+
+<canvas id="data_canvas" width="650" height="76"></canvas>
+
+<script type="text/javascript">
+
+var img = new Image();
+function init()
+{	img.onload = demo;
+	img.src = 'http://www.iter.org/media/www/img/stat/logo/top_logo.png';
+}
+
+
+
+function demo()
+{	
+	var canvas = document.getElementById('data_canvas');
+	var context = canvas.getContext('2d');
+	
+	context.drawImage(img,0,0);
+	
+	var input = context.getImageData(0, 0, 620, 76);
+	
+	alert('as');
+}
+
+/*
+function test_it()
+{
+	var can = document.getElementById('data_canvas');
+	var ctx = can.getContext('2d');
+	
+	var imageData = ctx.getImageData(0,0,650,76);
+	alert('no');
+}
+*/
+</script>
+
+<input type="button" value="yes" onClick="init();"/>
+<div id="testdata"></div>
+</body>
+</html>
